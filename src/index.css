@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-Bebas-Neue{
+        font-family: 'Bebas Neue', sans-serif;
+}
+.font-Inter{
+     font-family: 'Inter', sans-serif;
+}
+.kalpurush {
+    font-family: 'Kalpurush', Arial, sans-serif !important;
+}
