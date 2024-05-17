@@ -26,7 +26,7 @@ const DashboardNav = () => {
     const [motherCategory, setMotherCategory] = useState([])
 
     useEffect(() => {
-        fetch('https://brightcomponent-backend-v1.vercel.app/api/v1/category/mother-category/get').then((res) => res.json()).then((data) => {
+        fetch('https://brightcomponentbackend.vercel.app/api/v1/category/mother-category/get').then((res) => res.json()).then((data) => {
 
             setMotherCategory(data.category)
         })

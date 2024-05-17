@@ -44,7 +44,7 @@ const AddComponentCategory = () => {
     const [motherCategory, setMotherCategory] = useState([])
 
     useEffect(() => {
-        fetch('https://brightcomponent-backend-v1.vercel.app/api/v1/category//mother-category/get').then((res) => res.json()).then((data) => {
+        fetch('https://brightcomponentbackend.vercel.app/api/v1/category/mother-category/get').then((res) => res.json()).then((data) => {
 
             setMotherCategory(data.category)
         })
@@ -66,7 +66,7 @@ const AddComponentCategory = () => {
                 motherCategory,
                 description
             };
-            fetch('https://brightcomponent-backend-v1.vercel.app/api/v1/category/component', {
+            fetch('https://brightcomponentbackend.vercel.app/api/v1/category/component', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const AddComponentCategory = () => {
         const formData = new FormData();
         formData.append("image", file);
 
-        const url = `https://brightcomponent-backend-v1.vercel.app/api/v1/image/upload-image`;
+        const url = `https://brightcomponentbackend.vercel.app/api/v1/image/upload-image`;
 
         return fetch(url, {
             method: "POST",

@@ -28,7 +28,7 @@ const SignIn = () => {
             email,
             password
         }
-        fetch('https://brightcomponent-backend-v1.vercel.app/api/v1/auth/sign-in', {
+        fetch('https://brightcomponentbackend.vercel.app/api/v1/auth/sign-in', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
