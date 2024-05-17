@@ -28,7 +28,7 @@ const CompontsLayout = () => {
                 <div className='lg:block hidden'>
                     <SideNav />
                 </div>
-                <div className=' ml-3 mt-3 w-full  overflow-x-scroll '>
+                <div className='w-full pl-4 overflow-hidden '>
                     <Outlet />
                 </div>
             </div>

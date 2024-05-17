@@ -9,10 +9,10 @@ const ComponentsRoute = [
         path: '/components',
         element: <ComingSoon></ComingSoon>,
     },
-    {
-        path: '/components/*',
-        element: <Error />,
-    },
+    // {
+    //     path: '/components/*',
+    //     element: <Error />,
+    // },
     {
         path: '/components/:id',
         element: <AllComponents />,

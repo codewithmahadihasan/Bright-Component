@@ -11,3 +11,9 @@
 .kalpurush {
     font-family: 'Kalpurush', Arial, sans-serif !important;
 }
+::-webkit-scrollbar {
+    width: 0.5px;
+    height: 4px;
+    margin-top: 2px;
+    /* Adjust as needed */
+}

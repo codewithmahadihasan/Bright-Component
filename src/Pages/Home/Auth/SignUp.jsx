@@ -71,7 +71,7 @@ const SignUp = () => {
             email,
             password
         }
-        fetch('https://brightcomponent-backend-v1.vercel.app/api/v1/auth/sign-up', {
+        fetch('https://brightcomponentbackend.vercel.app/api/v1/auth/sign-up', {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'

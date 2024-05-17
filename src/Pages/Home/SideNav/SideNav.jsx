@@ -24,14 +24,16 @@ const SideNav = () => {
 
     const [motherCategory, setMotherCategory] = useState([])
 
-    useEffect(() => {
-        fetch('https://brightcomponent-backend-v1.vercel.app/api/v1/category/mother').then((res) => res.json()).then((data) => {
 
-            setMotherCategory(data.category)
+    useEffect(() => {
+        fetch('https://brightcomponentbackend.vercel.app/api/v1/category/mother').then((res) => res.json()).then((data) => {
+
+            setMotherCategory(data?.category)
         })
     }, [setMotherCategory])
 
-    console.log(motherCategory);
+    const [value, setValue] = useState('')
+
 
     return (
         <div>
@@ -52,6 +54,7 @@ const SideNav = () => {
                             </h4>
                             <form className="relative w-full overflow-hidden">
                                 <input
+                                    onChange={(e) => setValue(e.target.value)}
                                     id="tagSearchTerm"
                                     type="text"
                                     name="search"
@@ -91,16 +94,16 @@ const SideNav = () => {
           }
         `}
                             </style>
-                            {motherCategory.map((mother) => (
+                            {motherCategory?.map((mother) => (
                                 <ul key={mother._id} className="pt-2 pb-4  space-y-1 text-sm  ">
 
                                     <div className='flex items-center mb-4 gap-2 text-xl font-semibold'>
                                         <GrAppsRounded className='bg-[#0B64B4] p-1 text-2xl rounded-sm ' />  {mother.label}
                                     </div>
                                     {
-                                        mother?.children.map((child) => (
+                                        mother?.children?.filter((child) => child.name.toLowerCase().includes(value.toLocaleLowerCase())).map((child) => (
                                             <li className="rounded-sm">
-                                                <NavLink to={`/components/${camelToKebab(mother.label)}/${camelToKebab(child.name)}`}
+                                                <NavLink to={`/components/${camelToKebab(child.name)}`}
                                                     name={child.name}
                                                     aria-label="Testimonials" className={({ isActive }) => {
                                                         return isActive
